@@ -5,4 +5,5 @@
 kintone上にはドロップダウンとして保存されるので、絞り込みも楽ちん！
 
 ## イメージ
-<img src="https://github.com/RyBB/dynamicSelectPrefecture/blob/master/doc/images/image.png" style={width: "50%"}>
+
+<img src="https://github.com/RyBB/dynamicSelectPrefecture/blob/master/doc/images/image.png"  style="{width: 50%}">
