@@ -1,0 +1,35 @@
+/* .settings-heading {
+  padding: 1em 0;
+}
+
+.kintoneplugin-input-text {
+  width: 20em;
+} */
+
+.kintoneplugin-button-normal {
+  margin-top: 20px;
+  background-color: aliceblue;
+}
+
+div.block-btn button{
+  margin: 0 4px;
+}
+
+div.block {
+  margin-bottom: 50px;
+}
+hr {
+  margin: 20px 0;
+}
+div.block h3{
+  font-size: 16px;
+  margin: 10px 3px 10px 3px;
+  padding: 2px 8px;
+  border-left: 10px solid #0085d0;
+}
+div.block p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #888;
+  font-style: oblique;
+}

@@ -1,0 +1,49 @@
+{
+  "manifest_version": 1,
+  "version": 1,
+  "type": "APP",
+  "desktop": {
+    "js": [
+      "js/kintone-ui-component.min.js",
+      "js/prefectureList.js",
+      "js/desktop.js"
+    ],
+    "css": [
+      "css/kintone-ui-component.min.css",
+      "css/51-modern-default.css",
+      "css/desktop.css"
+    ]
+  },
+  "icon": "image/icon.png",
+  "config": {
+    "html": "html/config.html",
+    "js": [
+      "https://js.cybozu.com/sweetalert/v2.1.2/sweetalert.min.js",
+      "js/kintone-ui-component.min.js",
+      "js/kintone-config-helper.js",
+      "js/prefectureList.js",
+      "js/config.js"
+    ],
+    "css": [
+      "css/kintone-ui-component.min.css",
+      "css/51-modern-default.css",
+      "css/config.css"
+    ],
+    "required_params": [
+    ]
+  },
+  "name": {
+    "en": "dynamicSelectPrefecture",
+    "ja": "都道府県簡単入力プラグイン"
+  },
+  "description": {
+    "en": "This is easy to select prefecture.",
+    "ja": "都道府県を簡単に入力できるプラグインです。"
+  },
+  "mobile": {
+    "js": [
+      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
+      "js/mobile.js"
+    ]
+  }
+}
