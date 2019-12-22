@@ -1,7 +1,7 @@
 "use strict";
 const runAll = require("npm-run-all");
 
-runAll(["develop", "upload"], {
+runAll(["babel", "develop", "upload"], {
   parallel: true,
   stdout: process.stdout,
   stdin: process.stdin

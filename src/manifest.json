@@ -5,8 +5,8 @@
   "desktop": {
     "js": [
       "js/kintone-ui-component.min.js",
-      "js/prefectureList.js",
-      "js/desktop.js"
+      "js/es5/prefectureList-es5.js",
+      "js/es5/desktop-es5.js"
     ],
     "css": [
       "css/kintone-ui-component.min.css",
@@ -21,8 +21,8 @@
       "https://js.cybozu.com/sweetalert/v2.1.2/sweetalert.min.js",
       "js/kintone-ui-component.min.js",
       "js/kintone-config-helper.js",
-      "js/prefectureList.js",
-      "js/config.js"
+      "js/es5/prefectureList-es5.js",
+      "js/es5/config-es5.js"
     ],
     "css": [
       "css/kintone-ui-component.min.css",
@@ -42,8 +42,7 @@
   },
   "mobile": {
     "js": [
-      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
-      "js/mobile.js"
+
     ]
   }
 }

@@ -3,7 +3,7 @@
   const body = document.getElementsByTagName('BODY')[0];
 
   // kintone-ui-componentで使う変数
-  let spinner, isEnabledChk, fieldsSettingTable
+  let spinner, isEnabledChk, fieldsSettingTable;
 
   // スピナー
   spinner = new kintoneUIComponent.Spinner();
@@ -59,7 +59,7 @@
           index: index
         }
       };
-      obj = {...obj, ...newObj};
+      Object.assign(obj, newObj);
     });
     return obj;
   };
@@ -77,7 +77,7 @@
           index: index
         }
       };
-      obj = {...obj, ...newObj};
+      Object.assign(obj, newObj);
     });
     return obj;
   };
@@ -116,8 +116,8 @@
           "options": setPrefList(),
           "defaultValue": ""
         }
-      }
-      params.properties = {...params.properties, ...newParams};
+      };
+      params.properties = Object.assign(params.properties, newParams);
     });
     return kintone.api(kintone.api.url('/k/v1/preview/app/form/fields', true), 'PUT', params);
   };
@@ -133,7 +133,7 @@
   /*
   <<フォームの設定情報を取得して、プラグイン設定画面の項目を作る処理>>
   */
-  let dropdownFields,spaceFields;
+  let dropdownFields, spaceFields;
   KintoneConfigHelper.getFields()
     .then(function(resp) {
       // ドロップダウンフィールドの情報を格納するkintone-ui-componentのドロップダウン
@@ -181,7 +181,7 @@
       <<すでにプラグインが保存されていれば、その時の設定値を初期値にセットする処理>>
       */
       const conf = kintone.plugin.app.getConfig(PLUGIN_ID);
-      if (!conf.content) return;
+      if (!conf.content) { return; }
       const pluginConfigData = JSON.parse(conf.content);
 
       // プラグイン保存時にgetValueした値ではなく、最新のフォーム情報の値を設定
@@ -193,7 +193,7 @@
       // <<前回選ばれていたフィールドが削除されていた場合にドロップダウンの値を初期値に戻す処理>>
       config-helperで取得した最新のフォーム情報の中に、前回選ばれていた値があれば配列のlengthが1以上になる
       → 値がない（=フィールドが消された）場合、配列のlengthは0
-      */ 
+      */
       if (!checkSelectedItem(pluginConfigData.table[0].areaDrop.value, dropdownFields.items).length) {
         pluginConfigData.table[0].areaDrop.value = dropdownFields.value;
       }
@@ -213,7 +213,7 @@
       swal({
         title: 'Error',
         text: 'フィールド情報の取得に失敗しました。\n少し時間を置いてから再度画面を開いて下さい。\n\n※ 最低2つのドロップダウンと1つのスペースフィールドが必要です。',
-        icon: 'error',
+        icon: 'error'
       });
       console.dir(err);
       spinner.hide();
@@ -226,17 +226,17 @@
         swal({
           title: 'Success!',
           text: 'フィールド情報を更新しました！',
-          icon: 'success',
+          icon: 'success'
         });
       })
       .catch(err => {
         swal({
           title: 'Error',
           text: 'フィールド情報の更新に失敗しました。',
-          icon: 'error',
+          icon: 'error'
         });
         console.dir(err);
-      });;
+      });
   };
 
   // 保存ボタン・キャンセルボタンの処理
@@ -247,7 +247,7 @@
         table: fieldsSettingTable.getValue()
       })
     };
-    kintone.plugin.app.setConfig(config)
+    kintone.plugin.app.setConfig(config);
   };
   document.getElementById('cancel').onclick = () => {
     swal({
@@ -255,9 +255,9 @@
       text: 'プラグインの設定を保存せずに戻ってよろしいでしょうか？',
       icon: 'warning',
       buttons: true,
-      dangerMode: true,
+      dangerMode: true
     }).then(willBack => {
-      if (willBack) history.back();
+      if (willBack) { history.back(); }
     });
   };
 })(kintone.$PLUGIN_ID);
